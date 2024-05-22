@@ -7,6 +7,10 @@ defmodule ObjectiveChallengeWeb.Router do
 
   scope "/api", ObjectiveChallengeWeb do
     pipe_through :api
+
+    post("/conta", AccountController, :create)
+    get("/conta", AccountController, :show)
+    post("/transacao", TransactionController, :create)
   end
 
   # Enable LiveDashboard in development

@@ -10,7 +10,8 @@ defmodule ObjectiveChallenge.Application do
     children = [
       ObjectiveChallengeWeb.Telemetry,
       ObjectiveChallenge.Repo,
-      {DNSCluster, query: Application.get_env(:objective_challenge, :dns_cluster_query) || :ignore},
+      {DNSCluster,
+       query: Application.get_env(:objective_challenge, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: ObjectiveChallenge.PubSub},
       # Start a worker by calling: ObjectiveChallenge.Worker.start_link(arg)
       # {ObjectiveChallenge.Worker, arg},

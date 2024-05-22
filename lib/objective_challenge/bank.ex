@@ -17,4 +17,12 @@ defmodule ObjectiveChallenge.Bank do
       {:error, reason} -> {:error, Error.build(:bad_request, reason)}
     end
   end
+
+  @spec get_account_by_number(integer()) :: {:ok, %Account{}} | {:error, %Error{}}
+  def get_account_by_number(account_number) do
+    case Repo.get_by(Account, %{account_number: account_number}) do
+      %Account{} = account -> {:ok, account}
+      nil -> {:error, Error.build(:not_found, "account not found")}
+    end
+  end
 end

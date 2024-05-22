@@ -1,15 +1,5 @@
 import Config
 
-# Configure your database
-config :objective_challenge, ObjectiveChallenge.Repo,
-  username: "postgres",
-  password: "postgres",
-  hostname: "localhost",
-  database: "objective_challenge_dev",
-  stacktrace: true,
-  show_sensitive_data_on_connection_error: true,
-  pool_size: 10
-
 # For development, we disable any cache and enable
 # debugging and code reloading.
 #
@@ -24,6 +14,7 @@ config :objective_challenge, ObjectiveChallengeWeb.Endpoint,
   code_reloader: true,
   debug_errors: true,
   secret_key_base: "3p6XVwRohUhA+TAXceMk79IvwU/pIGEGetZgwAu+0k0x1RcXqMDkwW28pCiYTIaS",
+  secret_key_base: "K2gsqPp7+hK7Wx8EWGxjFHeVIQhyBvVHLrQSJZ96E0878QQ8sV4R4dF1pG2RvBjc",
   watchers: []
 
 # ## SSL Support

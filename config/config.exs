@@ -9,7 +9,19 @@ import Config
 
 config :objective_challenge,
   ecto_repos: [ObjectiveChallenge.Repo],
-  generators: [timestamp_type: :utc_datetime]
+  generators: [timestamp_type: :utc_datetime, binary_id: true]
+
+# Configure your database
+config :objective_challenge, ObjectiveChallenge.Repo,
+  username: "postgres",
+  password: "postgres",
+  hostname: "localhost",
+  database: "objective_challenge_dev",
+  stacktrace: true,
+  show_sensitive_data_on_connection_error: true,
+  pool_size: 10,
+  migration_primary_key: [type: :binary_id],
+  migration_foreign_key: [type: :binery_id]
 
 # Configures the endpoint
 config :objective_challenge, ObjectiveChallengeWeb.Endpoint,
@@ -20,7 +32,7 @@ config :objective_challenge, ObjectiveChallengeWeb.Endpoint,
     layout: false
   ],
   pubsub_server: ObjectiveChallenge.PubSub,
-  live_view: [signing_salt: "Mot/Vala"]
+  live_view: [signing_salt: "Yv7qjoEW"]
 
 # Configures Elixir's Logger
 config :logger, :console,

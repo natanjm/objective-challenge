@@ -1,0 +1,94 @@
+{
+	"info": {
+		"_postman_id": "9f35df53-319d-49bb-892e-132102b80dbf",
+		"name": "objective challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28311086"
+	},
+	"item": [
+		{
+			"name": "criar transação",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"forma_pagamento\":\"D\", \"numero_conta\": 234, \"valor\":3}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/transacao",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"transacao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "criar conta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"numero_conta\": 234, \"saldo\":180.37}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/conta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"conta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar conta",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/conta?numero_conta=234",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"conta"
+					],
+					"query": [
+						{
+							"key": "numero_conta",
+							"value": "234"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
